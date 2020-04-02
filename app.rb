@@ -1,8 +1,17 @@
 class Logger
-    def say_hello
-      puts "Hello, my brother!"
+    def def initialize
+        @f = File.open 'log.txt', 'a'
     end
-  end
+    
+    def self.say_hello
+        puts "Hello, my brother!"
+    end
+
+    def log_hello wat
+        @f.puts wat
+    end
+end
   
-  logger = Logger.new
-  logger.say_foo
+Logger.say_hello
+logger = Logger.new
+logger.log_hello 'hey!'
